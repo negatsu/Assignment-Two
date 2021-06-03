@@ -15,10 +15,10 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
-- task: CopyFiles@2
+- task: PublishBuildArtifacts@1
   inputs:
-    sourceFolder: $(Build.SourcesDirectory)
-    targetFolder: $(Build.ArtifactStagingDirectory)
+    pathtoPublish: '$(Build.ArtifactStagingDirectory)' 
+    artifactName: 'MyServiceName'
     
 - task: NuGetToolInstaller@1
 
